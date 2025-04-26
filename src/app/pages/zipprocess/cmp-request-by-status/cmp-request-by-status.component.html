@@ -1,0 +1,7 @@
+<div class="container-fluid pb-3 border-bottom">
+  @for (request of requests; track request){
+    <div class="row pb-1" (click)="onClickRequest(request)" >
+       {{request[1]}} от {{request[0]}}  к-во {{request[3]}}
+    </div>
+  }
+</div>

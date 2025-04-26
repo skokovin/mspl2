@@ -28,9 +28,9 @@ export class ZipRequest {
   part_price_sum: number;
   part_delivery: number;
   part_currency: string;
-  status: string;
+  status: number;
 
-  constructor(id: string, client_name: string, request_id: string, request_day: number, request_month: number, request_year: number, target: string, target_place: string, imo: string, eq_type: string, product_type: string, factory_name: string, serials: Array<string>, serial: string, customer_person: string, supplier_person: string, incoterms_rule: string, valid_day: number, valid_month: number, valid_year: number, part_no: string, part_descr: string, part_id: string, part_unit: string, part_qty: number, part_price: number, part_price_sum: number, part_delivery: number, part_currency: string, status: string) {
+  constructor(id: string, client_name: string, request_id: string, request_day: number, request_month: number, request_year: number, target: string, target_place: string, imo: string, eq_type: string, product_type: string, factory_name: string, serials: Array<string>, serial: string, customer_person: string, supplier_person: string, incoterms_rule: string, valid_day: number, valid_month: number, valid_year: number, part_no: string, part_descr: string, part_id: string, part_unit: string, part_qty: number, part_price: number, part_price_sum: number, part_delivery: number, part_currency: string, status: number) {
     this.id = id;
     this.client_name = client_name;
     this.request_id = request_id;

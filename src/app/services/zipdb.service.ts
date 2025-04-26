@@ -32,6 +32,8 @@ export class ZipdbService {
     let uri=encodeURI(MsSettings.service_url+'targets/catalogs/'+target)
     return this.http.get<Array<Array<string>>>(uri);
   }
+
+
   requestSerialsByTargretCatalogs(target:string,factory_name:string,eq_type:string):Observable<Array<string>>{
     let uri=encodeURI(MsSettings.service_url+'targets/serials/'+target+'/'+factory_name+'/'+eq_type);
     return this.http.get<Array<string>>(uri);

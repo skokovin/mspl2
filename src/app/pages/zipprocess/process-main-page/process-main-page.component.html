@@ -1,0 +1,47 @@
+<div class="container-fluid  overflow-hidden vh-100 vw-100" style="background-color: beige">
+  <div class="row">
+    <div class="col-5">
+      @for (s of states | keyvalue; track s) {
+       <div class="row">
+          {{s.key}} {{s.value[0]}}:  {{s.value[1]}}
+        </div>
+        <div class="row">
+          <app-cmp-request-by-status [status]="s.key"  [processMainPageComponent]="this"></app-cmp-request-by-status>
+        </div>
+      }
+    </div>
+    <div class="col-7">
+      <div class="btn btn-primary" (click)="OnApprove()">APPROVE</div>
+      @for (request_part of current_parts; track request_part) {
+        <div class="row w-100 ">
+          <div class="col-2  p-0">
+            <input class="form-control" type="text"  [(ngModel)]="request_part.target">
+          </div>
+          <div class="col-2 p-0">
+            <input class="form-control" type="text"  [(ngModel)]="request_part.serial">
+          </div>
+          <div class="col-2  p-0">
+            <input class="form-control" type="text"  [(ngModel)]="request_part.factory_name">
+          </div>
+          <div class="col-1 p-0">
+            <input class="form-control" type="text"  [(ngModel)]="request_part.eq_type">
+          </div>
+          <div class="col-1 p-0">
+            <input class="form-control" type="text"  [(ngModel)]="request_part.part_id">
+          </div>
+          <div class="col-3 p-0">
+            <input class="form-control" type="text"  [(ngModel)]="request_part.part_descr">
+          </div>
+          <div class="col-1 p-0">
+            <input class="form-control" type="number"  [(ngModel)]="request_part.part_qty">
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+
+
+</div>
+
+

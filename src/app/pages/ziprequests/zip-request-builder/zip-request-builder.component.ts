@@ -79,7 +79,7 @@ export class ZipRequestBuilderComponent implements AfterViewInit {
     let m=d.getMinutes();
     let s=d.getSeconds();
     let id=day + "-" + month + "-" + year + " " + h  + m  + s;
-    let part:ZipRequest=new ZipRequest("","","",0,0,0,"","","","","","",new Array<string>(),"","","","",0,0,0,"","","","",0,0,0,0,"","");
+    let part:ZipRequest=new ZipRequest("","","",0,0,0,"","","","","","",new Array<string>(),"","","","",0,0,0,"","","","",0,0,0,0,"",0);
     part.client_name=this.zip_client;
     part.target=this.zip_target;
     part.factory_name=this.zip_factory_name;
