@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="p-5"><b>{{ ziptarget }}</b></div>
+  </div>
+  @for (catalog of zip_catalogs; track catalog) {
+    <div class="row" (click)="onCatalogClick(catalog)">
+      {{ catalog[0] }} - {{ catalog[1] }}
+    </div>
+    <div class="row ms-5">
+      <app-cmp-zip-serials [zipRequestBuilderComponent]="zipRequestBuilderComponent" [cmpZipTargetComponent]="this"
+                           [factory_name]="catalog[0]" [eq_type]="catalog[1]"></app-cmp-zip-serials>
+    </div>
+  }
+</div>

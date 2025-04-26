@@ -1,0 +1,58 @@
+<div class="container-fluid  overflow-hidden vh-100 vw-100" style="background-color:yellow">
+  <div class="row">
+    <div class="col-4">
+      <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select (selectionChange)="onClientSelected($event.value)">
+          @for (client of zip_clients; track client) {
+            <mat-option value={{client}}>{{ client }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-2">
+      <button >Test</button>
+    </div>
+    <div class="col-6">
+      {{zip_client}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3  vh-100 overflow-auto">
+      @for ( ziptarget of zip_targets; track ziptarget) {
+        <app-cmp-zip-target [zipRequestBuilderComponent]="this" [ziptarget]="ziptarget"></app-cmp-zip-target>
+      }
+    </div>
+    <div class="col-4  vh-100 overflow-auto">
+      @for (part of zip_parts; track part[0]+part[1]) {
+        <div class="row border-bottom">
+          <div class="col-10 ">
+            <div>{{ part[0] }} - {{ part[1] }}</div>
+          </div>
+          <div class="col-2 ">
+            <div (click)="onAddPart(part)" class="btn btn-sm btn-info">-></div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="col-5  vh-100 overflow-auto">
+      <div class="row">Заявка № {{request_id}}</div>
+      <div class="row">
+        <div class="col-10">
+          Клиент {{zip_client}}
+        </div>
+        <div class="col-2">
+         <div class="btn btn btn-primary" (click)="OnStoreRequest()" >ОК</div>
+        </div>
+
+      </div>
+
+      @for (request_part of request_parts; track request_part) {
+        <div class="row">
+          <app-cmp-zip-request-part [zipRequestBuilderComponent]="this" [request_part]="request_part"></app-cmp-zip-request-part>
+        </div>
+      }
+    </div>
+  </div>
+
+</div>
