@@ -1,0 +1,74 @@
+@switch (processMainPageComponent.selected_status) {
+  @case (80) {
+    @for (s of supplyers | keyvalue; track s) {
+      <div class="row">
+        <div class="col-4  p-0">
+          <div class="btn btn-primary" (click)="OnSuppContract(s.value)">Создать Контракт {{ s.key }}</div>
+        </div>
+        <div class="col-8  p-0">
+
+        </div>
+
+      </div>
+      @for (request_part of s.value; track request_part) {
+        <div class="row w-100 ">
+          <div class="col-12  p-0">
+            {{ request_part.target }} | {{ request_part.serial }} |{{ request_part.factory_name }}
+            |{{ request_part.eq_type }} |{{ request_part.part_id }} |{{ request_part.part_descr }}
+            |{{ request_part.part_qty }}|{{ request_part.supplier_person }}|{{ request_part.part_price }}|{{ request_part.part_delivery }}
+          </div>
+        </div>
+      }
+    }
+  }
+  @case (90) {
+    @for (s of supplyers | keyvalue; track s) {
+      <div class="row">
+        <div class="col-4  p-0">
+          <div class="btn btn-primary" (click)="OnSuppContractPayment(s.value)">Оплачено {{ s.key }}</div>
+        </div>
+        <div class="col-8  p-0">
+
+        </div>
+
+      </div>
+      @for (request_part of s.value; track request_part) {
+        <div class="row w-100 ">
+          <div class="col-12  p-0">
+            {{ request_part.target }} | {{ request_part.serial }} |{{ request_part.factory_name }}
+            |{{ request_part.eq_type }} |{{ request_part.part_id }} |{{ request_part.part_descr }}
+            |{{ request_part.part_qty }}|{{ request_part.supplier_person }}|{{ request_part.part_price }}|{{ request_part.part_delivery }}
+          </div>
+        </div>
+      }
+    }
+  }
+  @case (100) {
+    @for (s of supplyers | keyvalue; track s) {
+      <div class="row">
+        <div class="col-4  p-0">
+          <div class="btn btn-primary" (click)="OnSuppLelivery(s.value)">Доставлено {{ s.key }}</div>
+        </div>
+        <div class="col-8  p-0">
+
+        </div>
+
+      </div>
+      @for (request_part of s.value; track request_part) {
+        <div class="row w-100 ">
+          <div class="col-12  p-0">
+            {{ request_part.target }} | {{ request_part.serial }} |{{ request_part.factory_name }}
+            |{{ request_part.eq_type }} |{{ request_part.part_id }} |{{ request_part.part_descr }}
+            |{{ request_part.part_qty }}|{{ request_part.supplier_person }}|{{ request_part.part_price }}|{{ request_part.part_delivery }}
+          </div>
+        </div>
+      }
+    }
+  }
+  @default {
+   EMPTY
+  }
+}
+
+
+
